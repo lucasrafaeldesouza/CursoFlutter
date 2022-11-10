@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:curso/pages/PageViews/contato.dart';
 import 'package:curso/pages/PageViews/dashboard.dart';
+import 'package:curso/pages/PageViews/todo_list_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -69,16 +70,23 @@ class _HomePageState extends State<HomePage> {
                 });
               },
             ),
+            ListTile(
+              title: Text('Lista'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                _pageController.jumpToPage(3);
+                Navigator.pop(context);
+                setState(() {
+                  indexBottomNavigationBar = 3;
+                });
+              },
+            ),
           ],
         ),
       ),
       body: PageView(
         controller: _pageController,
-        children: [
-          Cadastrar(),
-          Dasoboard(),
-          Contato(),
-        ],
+        children: [Cadastrar(), Dasoboard(), Contato(), TodoListPage()],
       ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: indexBottomNavigationBar,
@@ -101,7 +109,11 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
               icon: Icon(Icons.contact_mail),
               label: 'Contato',
-            )
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list),
+              label: 'List',
+            ),
           ]),
     );
   }

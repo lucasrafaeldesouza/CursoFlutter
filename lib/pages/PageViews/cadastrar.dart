@@ -27,28 +27,5 @@ class Cadastrar extends StatelessWidget {
         ),
       ],
     );
-    // return Column(
-    //   children: [
-    //     Container(
-    //       color: Colors.blue,
-    //       height: 100,
-    //       width: 170,
-    //       child: Center(
-    //         child: Text('CONTAINER 1'),
-    //       ),
-    //     ),
-    //     Container(
-    //       color: Colors.black,
-    //       height: 100,
-    //       width: 180,
-    //       child: Center(
-    //         child: Text(
-    //           'CONTAINER 2',
-    //           style: TextStyle(color: Colors.white),
-    //         ),
-    //       ),
-    //     ),
-    //   ],
-    // );
   }
 }
