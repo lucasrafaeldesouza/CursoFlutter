@@ -17,7 +17,7 @@ class OnePage extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              'First Page',
+              'Cadastrar',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 30,

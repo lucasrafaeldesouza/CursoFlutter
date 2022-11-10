@@ -24,6 +24,54 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Forge Soluções Digitais'),
       ),
+      drawer: Drawer(
+        width: 180,
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('Lucas'),
+              accountEmail: Text('lucas@hotmail.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.black,
+                child: Text('L'),
+              ),
+            ),
+            ListTile(
+              title: Text('Cadastrar'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                _pageController.jumpToPage(0);
+                Navigator.pop(context);
+                setState(() {
+                  indexBottomNavigationBar = 0;
+                });
+              },
+            ),
+            ListTile(
+              title: Text('Dashboard'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                _pageController.jumpToPage(1);
+                Navigator.pop(context);
+                setState(() {
+                  indexBottomNavigationBar = 1;
+                });
+              },
+            ),
+            ListTile(
+              title: Text('Contato'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                _pageController.jumpToPage(2);
+                Navigator.pop(context);
+                setState(() {
+                  indexBottomNavigationBar = 2;
+                });
+              },
+            ),
+          ],
+        ),
+      ),
       body: PageView(
         controller: _pageController,
         children: [

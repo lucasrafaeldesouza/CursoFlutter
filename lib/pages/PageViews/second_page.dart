@@ -17,7 +17,7 @@ class SecondPage extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              'Second Page',
+              'Dashboard',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 30,
