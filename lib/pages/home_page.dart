@@ -1,12 +1,12 @@
 import 'dart:ui';
-
+import 'package:curso/pages/PageViews/contato.dart';
+import 'package:curso/pages/PageViews/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-
-import 'PageViews/one_page.dart';
-import 'PageViews/second_page.dart';
+import 'PageViews/cadastrar.dart';
+import 'PageViews/dashboard.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -75,12 +75,9 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: _pageController,
         children: [
-          OnePage(),
-          SecondPage(),
-          // Container(
-          //   color: Colors.red,
-          // ),
-          // Container(color: Colors.yellow),
+          Cadastrar(),
+          Dasoboard(),
+          Contato(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
