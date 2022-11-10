@@ -101,17 +101,31 @@ class _HomePageState extends State<HomePage> {
             );
           },
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Cadastrar'),
             BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard_outlined),
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.black,
+                ),
+                label: 'Cadastrar'),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.dashboard_outlined,
+                color: Colors.black,
+              ),
               label: 'Dashboard',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.contact_mail),
+              icon: Icon(
+                Icons.contact_mail,
+                color: Colors.black,
+              ),
               label: 'Contato',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.list),
+              icon: Icon(
+                Icons.list,
+                color: Colors.black,
+              ),
               label: 'List',
             ),
           ]),

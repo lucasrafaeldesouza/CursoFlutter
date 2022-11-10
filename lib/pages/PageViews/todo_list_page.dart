@@ -10,8 +10,51 @@ class TodoListPage extends StatefulWidget {
 }
 
 class _TodoListPageState extends State<TodoListPage> {
+  TextEditingController _textEditingController = TextEditingController();
+
+  List<String> tarefas = [];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista de Tarefas'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(24),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Digite seu Nome',
+              ),
+              controller: _textEditingController,
+            ),
+            Container(
+              height: 400,
+              child: ListView.builder(
+                itemCount: tarefas.length,
+                itemBuilder: (context, index) {
+                  return Text(tarefas[index]);
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        onPressed: () {
+          if (_textEditingController.text.length > 0) {
+            setState(() {
+              tarefas.add(_textEditingController.text);
+            });
+            _textEditingController.clear();
+          }
+        },
+        child: Icon(Icons.add),
+      ),
+    );
   }
 }
